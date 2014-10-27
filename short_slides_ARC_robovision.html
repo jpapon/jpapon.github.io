@@ -504,31 +504,33 @@
         
         
         <!-- HIERARCHICAL SUPERVOXEL TRACKING -->
-        <section>
-          <h2> Tracking Low Level Patches - <br>Why Temporal Supervoxels? </h2>
-          <p> Tracking low level patches would let us make temporal connections <span class="fragment highlight-green"> <em>without</em> needing to specify a-priori objects.</p>
-          <figure class="embed hide-smooth dark" >
-                  <img src="data/splitting_objects.svg" >
-                  <figcaption style="font-size:1.0em">
-                    Splitting objects are problematic if we segment and track using a-priori models. <br> How do we label the pieces?
-                  </figcaption>
-          </figure>
-          <p class="fragment"> We have our low level patch representation - Supervoxels. </p>
-          <p class="fragment"> We have en efficient tracking method. </p>
-          <p class="fragment" style="font-size:150%; text-align:center"> So, what's the problem? </p>
-        </section>
         
         <section>
-          <h2> Why can't we just track Supervoxels? </h2>
-          <p> Cannot track exclusively at low-level due to the “aperture problem” <cite></cite></p>
-          <embed src="data/flash/twosquares.swf" width="90%" height="70%"></embed>
-          <p class="rcred"><a href="http://web.mit.edu/persci/demos/Motion&Form/demos/download.html">MIT Perceptual Science Group</a></p>
-          <br>
-          <div class='citation'>
-            <footl>
-              <footi>McDermott, et al., <a href="http://web.mit.edu/jhm/www/Pubs/McDermott_Weiss_Adelson_2001_motion_form_beyond_junctions.pdf">Beyond junctions: Nonlocal form contraints on motion interpretation.</a> <em>Perception </em> 2001.</footi>
-            </footl>
-          </div>
+          <section>
+            <h2> Why can't we track Supervoxels directly? </h2>
+            <p> Cannot track exclusively at low-level due to the “aperture problem” <cite></cite></p>
+            <embed src="data/flash/twosquares.swf" width="90%" height="70%"></embed>
+            <p class="rcred"><a href="http://web.mit.edu/persci/demos/Motion&Form/demos/download.html">MIT Perceptual Science Group</a></p>
+            <br>
+            <div class='citation'>
+              <footl>
+                <footi>McDermott, et al., <a href="http://web.mit.edu/jhm/www/Pubs/McDermott_Weiss_Adelson_2001_motion_form_beyond_junctions.pdf">Beyond junctions: Nonlocal form contraints on motion interpretation.</a> <em>Perception </em> 2001.</footi>
+              </footl>
+            </div>
+          </section>
+          <section>
+            <h2> Tracking Low Level Patches - <br>Why Temporal Supervoxels? </h2>
+            <p> Tracking low level patches would let us make temporal connections <span class="fragment highlight-green"> <em>without</em> needing to specify a-priori objects.</p>
+            <figure class="embed hide-smooth dark" >
+                    <img src="data/splitting_objects.svg" >
+                    <figcaption style="font-size:1.0em">
+                      Splitting objects are problematic if we segment and track using a-priori models. <br> How do we label the pieces?
+                    </figcaption>
+            </figure>
+            <p class="fragment"> We have our low level patch representation - Supervoxels. </p>
+            <p class="fragment"> We have en efficient tracking method. </p>
+            <p class="fragment" style="font-size:150%; text-align:center"> So, what's the problem? </p>
+          </section>
         </section>
         
         <section>
