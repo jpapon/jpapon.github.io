@@ -183,7 +183,9 @@ body {
 }
 
 .reveal blockquote {
-    background-color: rgba(40, 40, 70, 1);
+    background-color: rgba(70, 70, 70, 0.7);
+    box-shadow: 0px 4px 4px rgba(40,40,40,0.8);
+    width: 90%;
 }
 
 .reveal section div img, .reveal section div video {

@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="reveal/css/reveal.min.css">
     <link rel="stylesheet" href="pkgwtheme.css" id="theme">
     <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+    <script>
+      document.write('<link rel="stylesheet" href="reveal/css/print/'+(window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper')+'.css" type="text/css" media="print">');
+    </script>
     <!--[if lt IE 9]>
     <script src="reveal/lib/js/html5shiv.js"></script>
     <![endif]-->
@@ -58,12 +61,11 @@
           <div> <a style="color: #00FF00;text-shadow:2px 2px #000000" href="http://www.jeremiepapon.com/"><strong>Jérémie Papon</strong></a> </div>
           <div style="text-shadow:2px 2px #000000">
             Georg-August-Universität Göttingen <br>
+            Bernstein Center for Computational Neuroscience <br>
             Institut für Informatik <br>
-            Göttingen, 2014 Oct 17
           </div>
           </footer>
           <br>
-          <p style="text-align: center; text-shadow:2px 2px #000000 "> Disputation for the award of the degree "Doctor of Philosophy" </p>
           
         </section>
 
@@ -84,21 +86,26 @@
               * Spelke, Elizabeth S. "Principles of object perception." Cognitive science 14, no. 1 (1990): 29-56.
            </div>
             
-        </section>   
+        </section>  
         
-        <section>
-          <h2>Temporal Connections without Objects</h2>
-          <p>How can we create partitions when we don't know what an object is before-hand?</p>
-          <!--embed width="420" height="315" src="http://youtu.be/7GU7-zyqAvI"-->
-          <iframe data-autoplay height="60%" width="60%" src="http://www.youtube.com/embed/7GU7-zyqAvI?loop=1&html5=1&enablejsapi=1&playlist=7GU7-zyqAvI"></iframe>
-          <p>We have no difficulty tracking the pieces of objects when they split.</p>
-          <ul>
-          <li>This implies maintenance of both low-level and object-level spatio-temporal tracking.</li>
-          </ul>
-        </section>
-
         <!-- Existing Stuff -->
         <section>
+          <section>
+            <h2>Parsing Video Streams -<br> Existing Methodologies</h2>
+            <p><strong>Semantic Event Chains</strong><cite></cite> - Represents by analyzing creation & deletion of edges in segment adjacency graph.</p>
+
+            <p>Analysis of temporal evolution of graph structure yields semantics</p>
+            <iframe data-autoplay height="60%" width="60%" src="http://www.youtube.com/embed/Gt5TVEcSTTE?loop=1&html5=1&enablejsapi=1&&playlist=Gt5TVEcSTTE"></iframe>
+            <p class="rcred"><a href="https://www.youtube.com/watch?v=Gt5TVEcSTTE">Maniac Dataset: Breakfast</a></p>
+            <div>This requires  <span class="fragment highlight-green">a-priori knowledge</span> of objects!</div>
+            <br>
+            <div class='citation'>
+              <footl>
+                <footi>Aksoy, Eren Erdal, et al. <a href="http://www.dpi.physik.uni-goettingen.de/~eaksoye/papers/IJRR_2011.pdf">Learning the semantics of object–action relations by observation.</a> <em>The International Journal of Robotics Research</em> (2011).</footi>
+              </footl>
+            </div>
+          </section>
+        
           <section>
             <h2>Parsing Video Streams -<br> Existing Methodologies</h2>
             <p><strong>Video Object Segmentation</strong> 
@@ -106,8 +113,8 @@
                 Grundmann et al.<cite></cite></p>
             <p>This parses a video into spatio-temporal volumes - “objects”</p>
             <p>Core assumption means that “objects” must form <span class="fragment highlight-green">continuous spatio-temporal</span> volumes!</p>
-          <iframe data-autoplay height="60%" width="60%" src="http://www.youtube.com/embed/RDGxfEHHFac?loop=1&html5=1&enablejsapi=1&playlist=RDGxfEHHFac"></iframe>
-          <p class="rcred"><a href="http://www.videosegmentation.com/">Processed on VideoSegmentation.com</a></p>
+            <iframe data-autoplay height="60%" width="60%" src="http://www.youtube.com/embed/RDGxfEHHFac?loop=1&html5=1&enablejsapi=1&playlist=RDGxfEHHFac"></iframe>
+            <p class="rcred"><a href="http://www.videosegmentation.com/">Processed on VideoSegmentation.com</a></p>
             <br>
             <div class='citation'>
               <footl>
@@ -125,21 +132,7 @@
           </section>
         </section>
         
-        <section>
-          <h2>Parsing Video Streams -<br> Existing Methodologies</h2>
-          <p><strong>Semantic Event Chains</strong><cite></cite> - Represents by analyzing creation & deletion of edges in segment adjacency graph.</p>
-
-          <p>Analysis of temporal evolution of graph structure yields semantics</p>
-          <iframe data-autoplay height="60%" width="60%" src="http://www.youtube.com/embed/Gt5TVEcSTTE?loop=1&html5=1&enablejsapi=1&&playlist=Gt5TVEcSTTE"></iframe>
-          <p class="rcred"><a href="https://www.youtube.com/watch?v=Gt5TVEcSTTE">Maniac Dataset: Breakfast</a></p>
-          <div>This requires  <span class="fragment highlight-green">a-priori knowledge</span> of objects!</div>
-          <br>
-          <div class='citation'>
-            <footl>
-              <footi>Aksoy, Eren Erdal, et al. <a href="http://www.dpi.physik.uni-goettingen.de/~eaksoye/papers/IJRR_2011.pdf">Learning the semantics of object–action relations by observation.</a> <em>The International Journal of Robotics Research</em> (2011).</footi>
-            </footl>
-          </div>
-        </section>
+        
         
         <!-- 
         <section style="line-height: 135%">
@@ -169,166 +162,118 @@
            <img src="data/Overall_Cropped.svg" width="100%">
            </div>
           <div style="position:absolute;left:785px;top:137px;">
-            <video src="data/cutting_supervoxels_small.mp4" width="320px" height="240px" loop class="slideautostart"></video>
+            <video src="data/movies/cutting_noocc_result_png.mp4" height="50%" loop class="slideautostart"></video>
           </div>
           
         </section>
         
-        <section>
-          <h2>A Point Cloud</h2>
-          <div align="center">
-            <iframe   src="http://pointclouds.org/assets/viewer/pcl_viewer.html?load=http://jpapon.github.io/data/pointclouds/cutting_demo_cloud.pcd&psize=3" width="1100" height="650" marginwidth="0" marginheight="0" frameborder="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" style="max-width: 100%;">
-            </iframe>
-          </div>
-          <p>Advantages of 3D</p>
-          <ul>
-            <li> Avoids size/shape ambiguities of perspective transformation. </li>
-            <li> Can reason about occlusions at a low level. </li>
-            <li> Can use size and shape as a feature. </li>
-          </ul>
-        </section>
+                
         
-        <!--  
-        <section>
-          <h2>Octree Voxelization</h2>
-          <div class="w45" style="float: right">
-            <img src="data/bunnywork.png">
-            <p class="rcred"><a href="http://www.pointclouds.org/">Point Cloud Library (PCL)</a></p>
-          </div>
-          <p>Insert pointcloud into a grid of cubic voxels.</p>
-          <p>Represent all points in one cell by its centroid.</p>
-          <p>$$\vec{ \overline{p}} = \frac{1}{N_i}\sum_i \vec p_i$$</p>
-          <p>The edge length $L_\text{voxel}$ of voxels defines scale of observation and determines octree minimum bin size.</p>
-        </section>
         
         <section>
-          <h2>A Voxelized Point Cloud</h2>
-          <iframe   src="http://pointclouds.org/assets/viewer/pcl_viewer.html?load=http://www.jeremiepapon.com/wp_skeleton/content/uploads/cutting_demo_cloud_voxel_trans.pcd&psize=2" width="1100" height="750" marginwidth="0" marginheight="0" frameborder="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="">
-          </iframe>
-        </section>
-        -->
-        
-        <section>
-          <h2>Building an Adjacency Graph</h2>
+          <section>
+            <h2>Voxel Cloud Connectivity Segmentation - Supervoxels</h2>
+            <p> Example of Supervoxels with different seed sizes - from NYU Dataset <cite></cite> </p>
+            <div class="ctr w100">
+              <img src="data/IncreasingSeedSizePlain.svg" width="100%" >
+              <p class="rcred"><a href="http://www.jeremiepapon.com/cvpr-2013-supervoxels/">Papon et al. CVPR 2013</a></p>
+            </div>
+            <div class="ctr" style="width:75%">
+            <figure class="embed-top hide-smooth dark" >
+              <img src="data/VCCS_Performance.svg">
+              <figcaption style="font-size:1.0em">
+                Performance of VCCS Compared to state of the art methods
+              </figcaption>
+            </figure>
+            </div>  
+            <br>
+            <div class="citation">
+              <footl>
+                <footi>Silberman et al., <a href="http://cs.nyu.edu/~silberman/projects/indoor_scene_seg_sup.html">Indoor Segmentation and Support Inference from RGBD Images,</a> European Conference on Computer Vision (ECCV) 2012.</footi>
+              </footl>
+            </div>
+          </section>
+          
+          <section>
+            <h2>Voxel Cloud Connectivity Segmentation</h2>
             <ul>
-              <li class="fragment">Special octree type developed which maintains adjacency information of voxels</li>
-              <li class="fragment">This gives us back pixel-like (grid) relations, while keeping real 3D adjacency</li>
-              <li class="fragment">Region growing and connectivity graph become very efficient</li>
+              <li class="fragment">VCCS <cite></cite> is a region-growing oversegmentation technique that uses local geometry to respect object boundaries</li>
+              <li class="fragment">Constrained to flow across voxel connections</li>
+              <li class="fragment">Use color, normals, and a spatial smoothness constraint </li>
             </ul>
-          <div class="ctr w80">
-            <figure class="embed hide-smooth dark" >
-              <img src="data/AdjacencyOctree.svg">
-              <figcaption style="font-size:1.0em">
-                Octree Adjacency Structure - Leaves now link to their spatial neighbors.
-              </figcaption>
-            </figure>
-          </div>
-        </section>
-        
-        <section>
-          <h2>Voxel Cloud Connectivity Segmentation</h2>
-          <ul>
-            <li class="fragment">VCCS <cite></cite> is a region-growing oversegmentation technique that uses local geometry to respect object boundaries</li>
-            <li class="fragment">Constrained to flow across voxel connections</li>
-            <li class="fragment">Use color, normals, and a spatial smoothness constraint </li>
-          </ul>
-        
-          <div style="width:50%; float:left">
-            <figure class="embed hide-smooth dark" >
-              <img src="data/test55.png"">
-              <figcaption style="font-size:1.0em">
-                Test Scene
-              </figcaption>
-            </figure>
-          </div>
+          
+            <div style="width:50%; float:left">
+              <figure class="embed hide-smooth dark" >
+                <img src="data/test55.png"">
+                <figcaption style="font-size:1.0em">
+                  Test Scene
+                </figcaption>
+              </figure>
+            </div>
 
-          <div style="width:50%; float:right">
-            <figure class="embed hide-smooth dark" >
-              <img src="data/supervoxel-growth.gif">
-              <figcaption style="font-size:1.0em">
-                Iterative Expansion of Supervoxels using VCCS
-              </figcaption>
-            </figure>
-          <div>
-          <p class="rcred"><a href="http://users.acin.tuwien.ac.at/arichtsfeld/?site=4">OSD Dataset</a> <a href="http://www.pointclouds.org/blog/tocs/alexandrov/index.php">Sergey Alexandrov</a></p>
-          <br>
-          <div class='citation'>
-            <footl>
-              <footi>Papon et al., <a href="http://www.jeremiepapon.com/cvpr-2013-supervoxels/">Voxel Cloud Connectivity Segmentation - Supervoxels for Point Clouds,</a> Computer Vision and Pattern Recognition (CVPR) 2013.</footi>
-            </footl>
-          </div>
-        </section>
-        
-        <section>
-              <section>
-                <h2>Examples of Supervoxels</h2>
-                <p> Example of Supervoxels with different seed sizes - from NYU Dataset <cite></cite> </p>
-                <div class="ctr w100">
-                  <img src="data/IncreasingSeedSizePlain.svg" width="100%" >
-                  <p class="rcred"><a href="http://www.jeremiepapon.com/cvpr-2013-supervoxels/">Papon et al. CVPR 2013</a></p>
-                </div>
-                <div class="ctr" style="width:75%">
-                <figure class="embed-top hide-smooth dark" >
-                  <img src="data/VCCS_Performance.svg">
-                  <figcaption style="font-size:1.0em">
-                    Performance of VCCS Compared to state of the art methods
-                  </figcaption>
-                </figure>
-                </div>  
-                <br>
-                <div class="citation">
-                  <footl>
-                    <footi>Silberman et al., <a href="http://cs.nyu.edu/~silberman/projects/indoor_scene_seg_sup.html">Indoor Segmentation and Support Inference from RGBD Images,</a> European Conference on Computer Vision (ECCV) 2012.</footi>
-                  </footl>
-                </div>
-              </section>
-              
-              <section>
-                <h2>Quantitative Comparison to SLIC</h2>
-                <div>
-                  <figure class="embed-top hide-smooth dark" >
-                    <img src="data/IncreasingSeedSizePlain.svg">
-                    <figcaption style="font-size:1.0em">
-                      VCCS Supervoxels for increasing seed size.
-                    </figcaption>
-                  </figure>
-                  <p class="rcred"><a href="http://www.jeremiepapon.com/cvpr-2013-supervoxels/">Papon et al. CVPR 2013</a></p>
-                </div>
-                <div>
-                  <figure class="embed-top hide-smooth dark" >
-                    <img src="data/ComparisonToSLIC.svg">
-                    <figcaption style="font-size:1.0em">
-                      SLIC Superpixels
-                    </figcaption>
-                  </figure>
-                </div>  
-                <br>
-                <div class="citation" >
-                  <footl>
-                    <footi>Achanta et al., <a href="http://ivrg.epfl.ch/research/superpixels">SLIC Superpixels Compared to State-of-the-art Superpixel Methods, </a> IEEE Transactions on Pattern Analysis and Machine Intelligence, 2012.</footi>
-                  </footl>
-                </div>
-              </section>
-              
-              <section> 
-                <h2> Speed and Performance vs State of the Art </h2>
-                <div class="ctr" style="width:80%">
-                  <figure class="embed-top hide-smooth dark" >
-                    <img src="data/VCCS_Performance.svg">
-                    <figcaption style="font-size:1.0em">
-                      Performance of VCCS Compared to state of the art methods
-                    </figcaption>
-                  </figure>
-                </div>  
-                <div class="ctr" style="width:80%">
-                  <figure class="embed-top hide-smooth dark" >
-                    <img src="data/VCCS_Speed.svg">
-                    <figcaption style="font-size:1.0em">
-                      Speed of VCCS Compared to state of the art methods
-                    </figcaption>
-                  </figure>
-                </div> 
-              </section> 
+            <div style="width:50%; float:right">
+              <figure class="embed hide-smooth dark" >
+                <img src="data/supervoxel-growth.gif">
+                <figcaption style="font-size:1.0em">
+                  Iterative Expansion of Supervoxels using VCCS
+                </figcaption>
+              </figure>
+            <div>
+            <p class="rcred"><a href="http://users.acin.tuwien.ac.at/arichtsfeld/?site=4">OSD Dataset</a> <a href="http://www.pointclouds.org/blog/tocs/alexandrov/index.php">Sergey Alexandrov</a></p>
+            <br>
+            <div class='citation'>
+              <footl>
+                <footi>Papon et al., <a href="http://www.jeremiepapon.com/cvpr-2013-supervoxels/">Voxel Cloud Connectivity Segmentation - Supervoxels for Point Clouds,</a> Computer Vision and Pattern Recognition (CVPR) 2013.</footi>
+              </footl>
+            </div>
+          </section>
+          
+          <section>
+            <h2>Quantitative Comparison to SLIC</h2>
+            <div>
+              <figure class="embed-top hide-smooth dark" >
+                <img src="data/IncreasingSeedSizePlain.svg">
+                <figcaption style="font-size:1.0em">
+                  VCCS Supervoxels for increasing seed size.
+                </figcaption>
+              </figure>
+              <p class="rcred"><a href="http://www.jeremiepapon.com/cvpr-2013-supervoxels/">Papon et al. CVPR 2013</a></p>
+            </div>
+            <div>
+              <figure class="embed-top hide-smooth dark" >
+                <img src="data/ComparisonToSLIC.svg">
+                <figcaption style="font-size:1.0em">
+                  SLIC Superpixels
+                </figcaption>
+              </figure>
+            </div>  
+            <br>
+            <div class="citation" >
+              <footl>
+                <footi>Achanta et al., <a href="http://ivrg.epfl.ch/research/superpixels">SLIC Superpixels Compared to State-of-the-art Superpixel Methods, </a> IEEE Transactions on Pattern Analysis and Machine Intelligence, 2012.</footi>
+              </footl>
+            </div>
+          </section>
+          
+          <section> 
+            <h2> Speed and Performance vs State of the Art </h2>
+            <div class="ctr" style="width:80%">
+              <figure class="embed-top hide-smooth dark" >
+                <img src="data/VCCS_Performance.svg">
+                <figcaption style="font-size:1.0em">
+                  Performance of VCCS Compared to state of the art methods
+                </figcaption>
+              </figure>
+            </div>  
+            <div class="ctr" style="width:80%">
+              <figure class="embed-top hide-smooth dark" >
+                <img src="data/VCCS_Speed.svg">
+                <figcaption style="font-size:1.0em">
+                  Speed of VCCS Compared to state of the art methods
+                </figcaption>
+              </figure>
+            </div> 
+          </section> 
               
         </section>
         
@@ -339,6 +284,12 @@
         </section>
         
         <section>
+          <section>
+            <h2>LCCP Segments in a Point Cloud</h2>
+            <iframe   src="http://pointclouds.org/assets/viewer/pcl_viewer.html?load=http://jpapon.github.io/data/pointclouds/cutting_demo_cloud_lccp.pcd&psize=3" width="1100" height="750" marginwidth="0" marginheight="0" frameborder="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="">
+            </iframe>
+          </section>
+          
           <section>
             <h2>Local Convexity Segmentation (LCCP)<cite></cite></h2>
             <p>Use a local convexity criterion on adjacency graph edges to split graph.</p> <br>
@@ -397,19 +348,12 @@
             </figure>
             </div>
           </section>
+          
+          <section> 
+            <h2> Can segment huge full 3D scenes efficiently. </h2>
+            <iframe data-autoplay height="90%" width="90%" src="http://www.youtube.com/embed/RDWK09aoWFY?loop=1&html5=1&enablejsapi=1&html5=1&playlist=RDWK09aoWFY"></iframe>
+          </section>
         </section>       
-               
-               
-        <section>
-          <h2>LCCP Segments in a Point Cloud</h2>
-          <iframe   src="http://pointclouds.org/assets/viewer/pcl_viewer.html?load=http://jpapon.github.io/data/pointclouds/cutting_demo_cloud_lccp.pcd&psize=3" width="1100" height="750" marginwidth="0" marginheight="0" frameborder="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="">
-          </iframe>
-        </section>
-        
-        <section> 
-          <h2> Can segment huge full 3D scenes efficiently. </h2>
-          <iframe data-autoplay height="90%" width="90%" src="http://www.youtube.com/embed/RDWK09aoWFY?loop=1&html5=1&enablejsapi=1&html5=1&playlist=RDWK09aoWFY"></iframe>
-        </section>
         
         <section>
           <h2>Overview of Methodology</h2>
@@ -417,28 +361,11 @@
            <img src="data/Overall_Cropped.svg" width="100%">
            </div>
           <div style="position:absolute;left:785px;top:137px;">
-            <video src="data/cutting_supervoxels_small.mp4" width="320px" height="240px" loop class="slideautostart"></video>
+            <video src="data/movies/cutting_noocc_result_png.mp4" height="50%" loop class="slideautostart"></video>
           </div>
         </section>
         
         <!-- SEQUENTIAL POINT CLOUDS -->
-        <section>
-          <section>
-            <h2>Sequential Clouds & Occlusion Reasoning </h2>
-            <p> Occlusions appear as “shadows” in rendered point clouds. </p>
-            <p> For instance, here the lemon (which we want to keep track of) and much of the table is hidden by the bowl.</p>
-            <iframe data-autoplay height="70%" width="70%" src="http://www.youtube.com/embed/WZmC3Z78k3M?loop=1&html5=1&enablejsapi=1&playlist=WZmC3Z78k3M"></iframe>
-            <p> These blank areas limit our ability to have temporal continuity - object permanence.</p>
-          </section>
-          
-          <section>
-            <h2> Pointcloud <em>without</em> Occlusion Reasoning </h2>
-            <iframe   src="http://pointclouds.org/assets/viewer/pcl_viewer.html?load=http://jpapon.github.io/data/pointclouds/occlusion_without.pcd&psize=3" width="1100" height="750" marginwidth="0" marginheight="0" frameborder="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" style="max-width: 100%;">
-            </iframe>
-            <p>Fortunately, we can perform some <span class="fragment highlight-green">low-level reasoning</span> about occlusions.</p>
-          </section>
-        </section>
-
         <section>
           <section>
             <h2>Sequentially Updated Octree <cite></cite> </h2>
@@ -453,6 +380,21 @@
                 <footi>Papon et al., <a href="http://www.jeremiepapon.com/iros-2013-video-segmentation/">Point Cloud Video Object Segmentation using a Persistent Supervoxel World-Model,</a> Intelligent Robots and Systems (IROS) 2013.</footi>
               </footl>
             </div>
+          </section>
+          
+          <section>
+            <h2>Sequential Clouds & Occlusion Reasoning </h2>
+            <p> Occlusions appear as “shadows” in rendered point clouds. </p>
+            <p> For instance, here the lemon (which we want to keep track of) and much of the table is hidden by the bowl.</p>
+            <iframe data-autoplay height="70%" width="70%" src="http://www.youtube.com/embed/WZmC3Z78k3M?loop=1&html5=1&enablejsapi=1&playlist=WZmC3Z78k3M"></iframe>
+            <p> These blank areas limit our ability to have temporal continuity - object permanence.</p>
+          </section>
+          
+          <section>
+            <h2> Pointcloud <em>without</em> Occlusion Reasoning </h2>
+            <iframe   src="http://pointclouds.org/assets/viewer/pcl_viewer.html?load=http://jpapon.github.io/data/pointclouds/occlusion_without.pcd&psize=3" width="1100" height="750" marginwidth="0" marginheight="0" frameborder="no" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" style="max-width: 100%;">
+            </iframe>
+            <p>Fortunately, we can perform some <span class="fragment highlight-green">low-level reasoning</span> about occlusions.</p>
           </section>
           
           <section>
@@ -475,15 +417,36 @@
            <img src="data/Overall_Cropped.svg" width="100%">
            </div>
           <div style="position:absolute;left:785px;top:137px;">
-            <video src="data/cutting_supervoxels_small.mp4" width="320px" height="240px" loop class="slideautostart"></video>
+            <video src="data/movies/cutting_noocc_result_png.mp4" height="50%" loop class="slideautostart"></video>
           </div>
         </section>
         
         <!-- PARTICLE FILTERING -->
+        
+      
         <section>
-          <h2>Particle filter tracking in Point Clouds</h2>
-          <p> Correspondence-Based Particle Filter approach is used. </p>
-          <figure class="embed hide-smooth dark" >
+          <section>
+            <h2>Particle filter tracking in Point Clouds</h2>
+            <p>Stratified Correspondence Sampling <cite></cite></p>
+            <figure class="embed hide-smooth dark" >
+                <div style="width:100%">
+                    <img src="data/StratifiedCorrespondences.svg">
+                    <figcaption style="font-size:1.0em">
+                      Supervoxels are used to choose spatial strata for uniform random sampling.  
+                    </figcaption>
+                </div>
+              </figure>
+            <br><br>
+            <div class='citation'>
+              <footl>
+                <footi>Papon et al., <a href="http://www.jeremiepapon.com/wacv-2015-tracking/">Spatially Stratified Correspondence Sampling for Real-Time Point Cloud Tracking,</a> Applications of Computer Vision (WACV), 2015.</footi>
+              </footl>
+            </div>
+          </section>
+          <section>
+            <h2>Particle filter tracking in Point Clouds</h2>
+            <p> Correspondence-Based Particle Filter approach is used. </p>
+            <figure class="embed hide-smooth dark" >
               <div style="width:100%">
                   <img src="data/TideModelSV.svg">
                   <figcaption style="font-size:1.0em">
@@ -491,24 +454,7 @@
                   </figcaption>
               </div>
             </figure>
-        </section>
-      
-        <section>
-          <h2>Stratified Correspondence Sampling <cite></cite></h2>
-          <figure class="embed hide-smooth dark" >
-              <div style="width:100%">
-                  <img src="data/StratifiedCorrespondences.svg">
-                  <figcaption style="font-size:1.0em">
-                    Supervoxels are used to choose spatial strata for uniform random sampling.  
-                  </figcaption>
-              </div>
-            </figure>
-          <br><br>
-          <div class='citation'>
-            <footl>
-              <footi>Papon et al., <a href="http://www.jeremiepapon.com/wacv-2015-tracking/">Spatially Stratified Correspondence Sampling for Real-Time Point Cloud Tracking,</a> Applications of Computer Vision (WACV), 2015.</footi>
-            </footl>
-          </div>
+          </section>
         </section>
         
         <section>
@@ -520,7 +466,7 @@
           
           <section>
             <h2> Results on Synthetic Benchmark <cite></cite> </h2>
-            <iframe data-autoplay height="80%" width="80%" src="http://www.youtube.com/embed/iEJNf53v_WU?loop=1&html5=1&enablejsapi=1&playlist=iEJNf53v_WU"></iframe>                     
+            <iframe data-autoplay height="80%" width="80%" src="http://www.youtube.com/embed/iEJNf53v_WU?loop=1&html5=1&enablejsapi=1&playlist=iEJNf53v_WU"></iframe> 
             <br><br>
             <div class='citation'>
               <footl>
@@ -529,11 +475,9 @@
               </footl>
             </div>
           </section>
-        </section>
-        
-        <section>
+          
           <section>
-            <h2>Results on VR Data</h2>
+            <h2>Results on Synthetic Benchmark</h2>
             <p> 
             <figure class="embed-top reveal-smooth dark" >
                 <div style="width:100%">
@@ -545,7 +489,7 @@
             </figure>
           </section>
           <section>
-            <h2>Results on VR Data</h2>
+            <h2>Results on Synthetic Benchmark</h2>
             <figure class="embed-top reveal-smooth dark" >
               <div style="width:100%">
                   <img src="data/AngularErrorMilk.svg">
@@ -556,7 +500,7 @@
             </figure>
           </section>
         </section>
-        
+      
         
         
         <!-- HIERARCHICAL SUPERVOXEL TRACKING -->
@@ -610,7 +554,6 @@
         <section>
           <h2> Hierarchical Temporal (super)Voxel Fields (HTVF) </h2>
           <div id="Stage" class="EDGE-3489513"></div>
-          <p> Press "a" and "d" to advance and go back through the algorithm. </p>
         </section>
 
         <section>
@@ -626,29 +569,30 @@
         </section>
         
         <section>
+          <section>
+            <h2> HTVF - Occlusions - With Voxel Raytracing 3 </h2>
+           <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/Oq49GODldQ0?loop=1&html5=1&enablejsapi=1&playlist=Oq49GODldQ0"></iframe> 
+          </section>
+          
+          <section>
           <h2> HTVF - Occlusions - Without Voxel Raytracing </h2>
-            <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/aYOwjk00SPs?loop=1&html5=1&enablejsapi=1&playlist=aYOwjk00SPs"></iframe>          
+           <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/aYOwjk00SPs?loop=1&html5=1&enablejsapi=1&playlist=aYOwjk00SPs"></iframe>
         </section>
-        
-        <section>
+          
           <section>
             <h2> HTVF - Occlusions - With Voxel Raytracing 0</h2>
-            <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/WHi0lawXgBY?loop=1&html5=1&enablejsapi=1&playlist=WHi0lawXgBY"></iframe>            
+            <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/WHi0lawXgBY?loop=1&html5=1&enablejsapi=1&playlist=WHi0lawXgBY"></iframe>
           </section>
           
           <section>
             <h2> HTVF - Occlusions - With Voxel Raytracing 1 </h2>
-            <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/Ykq0T6HQVZ0?loop=1&html5=1&enablejsapi=1&playlist=Ykq0T6HQVZ0"></iframe>            
+            <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/Ykq0T6HQVZ0?loop=1&html5=1&enablejsapi=1&playlist=Ykq0T6HQVZ0"></iframe>
           </section>
           
           <section>
             <h2> HTVF - Occlusions - With Voxel Raytracing 2 </h2>
-            <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/2ghgMTAGm5s?loop=1&html5=1&enablejsapi=1&playlist=2ghgMTAGm5s"></iframe>             
+            <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/2ghgMTAGm5s?loop=1&html5=1&enablejsapi=1&playlist=2ghgMTAGm5s"></iframe>
           </section>
-          
-          <section>
-            <h2> HTVF - Occlusions - With Voxel Raytracing 3 </h2>
-            <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/Oq49GODldQ0?loop=1&html5=1&enablejsapi=1&playlist=Oq49GODldQ0"></iframe>                </section>
           
           <section>
             <h2> Occlusions - Just Occlusion Filling </h2>
@@ -660,43 +604,47 @@
         
         <section>
           <h2>Summary</h2>
-          <div style="font-size: 110%; line-height: 145%">
-            <p>We have presented a novel pipeline for creating spatio-temporal connections in point cloud video </p>
+          <div style="font-size: 110%; line-height: 125%">
+            <p>We can now create local spatio-temporal fields in point cloud video </p>
             <div style="float:right">
-              <video src="data/cutting_supervoxels_small.mp4" width="320px" height="240px" loop class="slideautostart"></video>
+              <video src="data/movies/cutting_noocc_result_png.mp4" height="60%" loop class="slideautostart"></video>
             </div>
             <div style="width:65%">
-              <p class="fragment"> Importantly, our method:</p>
+              <p class="fragment"> Importantly, these fields:</p>
               <ul>
-                <li class="fragment">Can handle occlusions - labels persist </li>
-                <li class="fragment">Does not make a-priori assumptions about objects</li>
-                <li class="fragment">Handles rapid movement of people/cameras</li>
+                <li class="fragment">Can handle occlusions - permanence </li>
+                <li class="fragment">Do not need to track object instances</li>
                 <li class="fragment">Provides stable temporal-supervoxels that can be used for learning</li>
               </ul>
             </div>
           </div>
           <br>
           <div class="fragment">
-            <div style="width:50%; float:left">
-              <p>Other Contributions</p>
+            <div style="width:100%; float:left">
+              <p style="font-size:1.3em">Opportunities within Centre for Robotic Vision</p>
               <ul>
-                <li> Oculus vision GUI </li>
-                <li> All algorithms have been released as Open Source </li>
-                <li> 2D Tracking and Segmentation using Particle Filters </li>
+                <li class="fragment" data-fragment-index="4">Understanding scenes and human actions (SV3 & VA3) </li>
+                  <ul style="list-style-type: none">
+                    <li class="fragment" data-fragment-index="4" >Semantic segmentation of video - temporal supervoxels as basic element. </li>
+                    <li class="fragment" data-fragment-index="4">Build and maintain a scene model using spatio-temporal adjacency graph. </li>
+                    <li class="fragment" data-fragment-index="4">Can incorporate global sensor pose as top-down feedback to improve tracking results.</li>
+                  </ul>
+                <li class="fragment" data-fragment-index="5">Proposals for recognition (SV2) </li>
+                <ul style="list-style-type: none">
+                    <li class="fragment" data-fragment-index="5">Can use SV connectivity to propose as candidates for recognition. </li>
+                    <li class="fragment" data-fragment-index="5">Classes can be used as top-down feedback to help maintain instance labels for activity recognition. </li>
+                </ul>
               </ul>
-            </div>
-            <div style="width:40%; float:right">
-              <figure class="embed hide-smooth dark" >
-                  <img src="data/oculus.png">
-                  <figcaption style="font-size:0.7em">
-                      Oculus Vision GUI
-                  </figcaption>
-              </figure>
             </div>
           </div>
           
         </section>
         
+        <section>
+          <h2> Questions? </h2>
+          <img src="data/questions.jpg" height="90%"/>
+        </section>
+
         <section>
           <h2>Outlook and Future Work</h2>
           <div style="font-size: 110%; line-height: 145%">
@@ -739,76 +687,19 @@
         </section>
         
         <section>
-          <h2>Acknowledgements and Thanks</h2>
-          <h4 align="left">Thesis-related Publications</h4>
-          <ul style="font-size: 60%; line-height: 135%; width:50%; float:left">
-            <li><strong>Papon, J.</strong>;  Wörgötter, F., <a href="http://www.jeremiepapon.com/wacv-2015-tracking/">Spatially Stratified Correspondence Sampling for Real-Time Point Cloud Tracking,</a> Applications of Computer Vision (WACV), 2015 IEEE International Conference on, Jan. 2015.</li>
-            <br style="line-height:150%">
-            <li>Stein, S.; Schoeler, M.; <strong>Papon, J.</strong>;  Wörgötter, F., <a href="http://www.jeremiepapon.com/cvpr-2014-segmentation/">Object Partitioning using Local Convexity,</a> Computer Vision and Pattern Recognition (CVPR) 2014, June 2014. </li>
-            <br style="line-height:150%">
-            <li><strong>Papon, J.</strong>;  Kulvicius, T.; Aksoy, E.; Wörgötter, F. <a href="http://www.jeremiepapon.com/iros-2013-video-segmentation/">Point Cloud Video Object Segmentation using a Persistent Supervoxel World-Model,</a> Intelligent Robots and Systems (IROS), 2013 IEEE/RSJ International Conference on, Nov. 2013.</li>
-            <br style="line-height:150%">
-            <li><strong>Papon, J.</strong>; Abramov, A.; Schoeler, M.; Wörgötter, F., <a href="http://www.jeremiepapon.com/cvpr-2013-supervoxels/">Voxel Cloud Connectivity Segmentation - Supervoxels for Point Clouds,</a> Computer Vision and Pattern Recognition (CVPR) 2013, June 2013.</li>
-            <br style="line-height:150%">
-            <li><strong>Papon, J.</strong>; Abramov, A.; Wörgötter, F., <a href="http://www.jeremiepapon.com/eccv-2012-ws-2d-video-segmentation/">Occlusion Handling in Video Segmentation via Predictive Feedback,</a> European Conference on Computer Vision (ECCV) 2012, Workshops and Demonstrations, Oct. 2012.</li>
-            <br style="line-height:150%">
-            <li><strong>Papon, J.</strong>; Abramov, A.; Aksoy, E.; Wörgötter, F., <a href="http://www.jeremiepapon.com/wacv-2012-oculus-system/">A modular system architecture for online parallel vision pipelines,</a> Applications of Computer Vision (WACV) 2012, Jan. 2012.</li>
-          </ul>
-          <div style="width:40%; float:right">
-            <div style="width:30%; float:left">
-              <figure class="embed hide-smooth dark" >
-                  <img src="data/hogrefe.jpg" alt="Dieter Hogrefe">
-                  <figcaption style="font-size:0.5em">
-                      Dieter Hogrefe
-                  </figcaption>
-              </figure>
-            </div>
-             
-            <div style="width:35%; float:right">
-              <figure class="embed hide-smooth dark" >
-                  <img src="data/piater.jpg" alt="Justus Piater">
-                  <figcaption style="font-size:0.5em">
-                      Justus Piater
-                  </figcaption>
-              </figure>
-            </div>
-            
-            <div style="width:35%; float:right">
-              <figure class="embed hide-smooth dark" >
-                  <img src="data/worgotter.png" alt="Florentin Wörgötter">
-                  <figcaption style="font-size:0.5em">
-                      Florentin Wörgötter
-                  </figcaption>
-              </figure>
-            </div>
-          
-          
-          <img src="data/point-cloud-library-logo.png">
-          <p style="font-size:70%"> <em style="color: green">Colleagues & Friends:</em> Markus Schoeler, Alexey Abramov, Tomas Kulvicius, Mohammad Aein, Minija Tamosiunaite, Simon Stein, Simon Reich, Eren Aksoy, Christian Tetzlaff, Ursula Hahn-Wörgötter, Jan-Matthias Braun, Timo Luddecke, Timo Nachstedt, Alejandro Agostini, Michael Fauth, Xiaofeng Xiong, Sakya Dasgupta, Yinyun Li, Rajeeth Savarimuthu, Anders Buch, Sergey Alexandrov. </p>
-          <p style="font-size:90%">My loving and supportive parents - <br><em style="color: green"> Jean-Marc and Marian. </em> </p>
-          </div>
-        </section>
-        
-        <section>
-          <h2> Questions? </h2>
-          <img src="data/thesis_defense.png" height="90%">
-          <p class="rcred"><a href="http://xkcd.com/1403/">XKCD</a></p>
-        </section>
-
-        <section>
           <section>
             <h2> HTVF - Camera Pan 0 </h2>
-              <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/0D9dOgv9COw?loop=1&html5=1&enablejsapi=1&playlist=0D9dOgv9COw"></iframe>                
-          </section> 
-
-          <section>
-            <h2> HTVF - Camera Pan 2 - LCCP Overlay</h2>
-              <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/97MJs3MREPo?loop=1&html5=1&enablejsapi=1&playlist=97MJs3MREPo"></iframe>            
+            <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/0D9dOgv9COw?loop=1&html5=1&enablejsapi=1&playlist=0D9dOgv9COw"></iframe> 
           </section>
           
           <section>
+            <h2> HTVF - Camera Pan 2 - LCCP Overlay</h2>
+            <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/97MJs3MREPo?loop=1&html5=1&enablejsapi=1&playlist=97MJs3MREPo"></iframe>    
+          </section>
+          <section>
+          
             <h2> HTVF - Camera Pan 1</h2>
-              <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/uYKIWuRshkQ?loop=1&html5=1&enablejsapi=1&playlist=uYKIWuRshkQ"></iframe>                
+            <iframe data-autoplay height="100%" width="100%" src="http://www.youtube.com/embed/uYKIWuRshkQ?loop=1&html5=1&enablejsapi=1&playlist=uYKIWuRshkQ"></iframe> 
           </section>
         </section>
         
@@ -818,6 +709,7 @@
     <script src="reveal/lib/js/head.min.js"></script>
     <script src="reveal/js/reveal.min.js"></script>
     <script src="pdfjs/compatibility.js"></script>
+    <script src="pdfjs/pdf.js"></script>
 
     <script>
       Reveal.initialize({
@@ -851,6 +743,7 @@
           { src: 'reveal/plugin/notes/notes.js', async: true,
             condition: function() { return !!document.body.classList; }},
           { src: 'mymath.js', async: true },
+          { src: 'pdfimgs.js', async: true },
           { src: 'slideautostart.js', async: true },
         ],
       });
